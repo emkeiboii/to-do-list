@@ -1,3 +1,10 @@
+:root{
+  --clr-primary: #1338be;
+  --clr-light: rgb(131, 255, 253);
+  --clr-dark: #142d88;
+}
+
+
 *
 *::before,
 *::after{
@@ -11,7 +18,7 @@ body{
   font-weight: 400;
   display: grid;
   font-size: 1.5rem;
-  color: #1338be;
+  color: var(--clr-primary);
   grid: "header header header header" auto
   "..... lists active ....." auto /
   1fr minmax(100px, 350px) minmax(250px, 500px) 1fr;
@@ -99,12 +106,12 @@ form{
 .todo-list{
   grid-area: active;
   margin: 0;
-  background-color: #1338be;
+  background-color: var(--clr-primary);
   color: white;
 }
 
 .todo-header{
-  background-color: #142d88;
+  background-color: var(--clr-dark);
   display:flex;
   align-items: center;
   justify-content: space-between;
@@ -125,6 +132,7 @@ form{
 .todo-body{
   padding: 2rem;
   line-height: 1.5;
+  position: relative;
 }
 
 [type="checkbox"]{
@@ -159,19 +167,25 @@ form{
   border-radius: 50%;
   margin-right: var(--size);
   transform: scale(1);
-  transition: transform 250ms ease-in-out;
+  transition: transform 270ms ease-in-out;
 }
 
 .task:hover .custom-checkbox,
 [type="checkbox"]:focus + label .custom-checkbox{
   transform: scale(1.2);
-  color: rgb(169, 169, 245);
+  color:var(--clr-light);
 }
 
 [type="checkbox"]:checked + label .custom-checkbox{
-  background-color: rgb(169, 169, 245);
-  border: rgb(169, 169, 245) solid;
+  background-color: var(--clr-light);
+  transform: scale(1);
+  border:var(--clr-light) solid;
 }
+
+[type="checkbox"]:checked + label{
+  opacity: 0.5;
+}
+
 
 
 .btn.task{
@@ -186,6 +200,20 @@ form{
   opacity: 0.5;
 }
 
+.delete-stuff{
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -35px;
+  color: var(--clr-primary);
+}
+
+.btn.delete:hover{
+  opacity: 0.7;
+  color: red;
+}
 
 
 
@@ -214,7 +242,16 @@ form{
   list-style: none;
 }
 
-.active{
-  display: block;
+
+
+.hamburger.active .bar:nth-child(2){
+ opacity: 0;
 }
 
+.hamburger.active .bar:nth-child(1){
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3){
+  transform: translateY(-8px) rotate(-45deg);
+}
