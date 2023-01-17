@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;800;900&family=Montserrat:ital,wght@0,200;0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
   <title>Document</title>
+  <script defer src="script.js"></script>
 </head>
 <body>
   <div class="navbar">
@@ -23,13 +24,13 @@
   </div>
   <div class="all-tasks">
     <h2 class="task-list-title">Task list</h2>
-    <ul class="task-list">
-      <li class="list-name active-list">Spesa</li>
+    <ul class="task-list" data-lists>
+      <!-- <li class="list-name active-list">Spesa</li>
       <li class="list-name">Esercizio</li>
-      <li class="list-name">Lavoro</li>
+      <li class="list-name">Lavoro</li> -->
     </ul>
-    <form action="">
-      <input type="text" class="new list" placeholder="new list name"  aria-label="new list name">
+    <form action="" data-new-list-form>
+      <input type="text" class="new list" data-new-list-input placeholder="new list name"  aria-label="new list name">
       <button class="btn list">+</button>
     </form>
   </div>
@@ -67,6 +68,6 @@
       </div>
     </div>
     
-    <script src="script.js"></script>
+    <script src="menu-animation.js"></script>
   </body>
   </html>
