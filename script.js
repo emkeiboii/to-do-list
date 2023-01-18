@@ -2,7 +2,7 @@ const listsContainer = document.querySelector('[data-lists]')
 const newListForm = document.querySelector('[data-new-list-form]')
 const newListInput = document.querySelector('[data-new-list-input]')
 
-const LOCAL_STORAGE_LIST_KEY = 'task-lists'
+const LOCAL_STORAGE_LIST_KEY = "task.list"
 let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || []
 
 newListForm.addEventListener('submit', e =>{
@@ -12,7 +12,7 @@ newListForm.addEventListener('submit', e =>{
   const list = createList(listName)
   newListInput.value = null
   lists.push(list)
-  render()
+  saveAndRender()
 })
 
 function createList(name){
