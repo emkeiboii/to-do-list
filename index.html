@@ -39,37 +39,36 @@
       <h2 class="todo-title" data-list-title>Spesa</h3>
         <p class="task-count" data-list-count>3 tasks remaining</p>
       </div>
-      <div class="todo-body">
-        <div class="tasks" data-tasks>
-        <!-- task 1-->
-        <div class="task">
-          <input type="checkbox" id="task-1">
-          <label for="task-1"><span class="custom-checkbox"></span>lattuga</label>
-          <!-- task 2-->
-        </div>
-        <div class="task">
-          <input type="checkbox" id="task-2">
-          <label for="task-2"><span class="custom-checkbox"></span>sapone</label>
-        </div>
-        <!-- task 3-->
-        <div class="task">
-          <input type="checkbox" id="task-3">
-          <label for="task-3"><span class="custom-checkbox"></span>acqua</label>
-        </div>
+            <div class="todo-body">
+        <div class="tasks" data-tasks></div>
+
         <div class="new-task-creator">
+            <form action="" data-new-task-form>
+                <input 
+                  type="text"
+                  data-new-task-input
+                  class="new task"
+                  placeholder="new task name"
+                  aria-label="new task name"
+                />
+                <button class="btn create" aria-label="create new task">+</button>
+              </form>
         </div>
-          <form action="">
-            <input type="text" class="new task" placeholder="new task name"  aria-label="new task name">
-            <button class="btn task">+</button>
-          </form>
-      </div>
+
         <div class="delete-stuff">
-          <button class="btn delete">Clear completed tasks</button>
-          <button class="btn delete" data-delete-list-button >Delete list</button>
+          <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
+          <button class="btn delete" data-delete-list-button>Delete list</button>
         </div>
       </div>
     </div>
-    
+
+  </div>
     <script src="menu-animation.js"></script>
+    <template id="task-template">
+      <div class="task">
+        <input type="checkbox">
+        <label><span class="custom-checkbox"></span></label>
+      </div>
+    </template>
   </body>
   </html>
