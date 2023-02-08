@@ -78,6 +78,13 @@ form{
   display: flex;
 }
 
+ 
+.tip{
+ font-size: 0.7em;
+ padding: 36px;
+ 
+}
+
 .new{
   background: transparent;
   border: 0;
