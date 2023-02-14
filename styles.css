@@ -2,6 +2,7 @@
   --clr-primary: #1338be;
   --clr-light: rgb(131, 255, 253);
   --clr-dark: #142d88;
+  --clr-darker: #071138;
 }
 
 
@@ -22,6 +23,7 @@ body{
   grid: "header header header header" auto
   "..... lists active ....." auto /
   1fr minmax(100px, 350px) minmax(250px, 500px) 1fr;
+  overflow: hidden;
 }
 
 .navbar{
@@ -230,6 +232,7 @@ form{
 /* menu */
 .hamburger{
   cursor: pointer;
+  z-index: 1002;
 }
 
 .bar{
@@ -237,25 +240,67 @@ form{
   width: 25px;
   height: 3px;
   margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: #1338be;
-}
-
-.nav-list{
-  display:none;
-  list-style: none;
 }
 
 
 .hamburger.active .bar:nth-child(2){
  opacity: 0;
+ background-color: white;
 }
 
 .hamburger.active .bar:nth-child(1){
   transform: translateY(8px) rotate(45deg);
+  background-color: white;
 }
 
 .hamburger.active .bar:nth-child(3){
   transform: translateY(-8px) rotate(-45deg);
+  background-color: white;
+}
+
+
+/* Navs */
+
+.sliding{
+  background-color: var(--clr-darker);
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translate3d(100vw, 0, 0);
+  height: 100vh;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform .3s cubic-bezier(0, .52, 0, 1);
+}
+
+.nav-list{
+  list-style: none;
+  padding: 8px 30px;
+  display: flex;
+  flex-direction:column;
+  gap: 1em;
+  margin: 40px 50px;
+  align-items: center;
+}
+
+.nav-item ul li{
+  font-size: 1em;
+}
+
+.nav-item a{
+  text-decoration: none;
+  color: white;
+}
+
+.nav-item:hover{
+  opacity: 70%;
+}
+
+.sliding.visible{
+  transform: translate3d(0vw, 0, 0);
+
 }
