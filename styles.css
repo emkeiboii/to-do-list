@@ -10,7 +10,7 @@
 *::before,
 *::after{
   padding: 0;
-  margin: 0;
+  margin: 0;  
   box-sizing: border-box;
 }
 
@@ -24,6 +24,7 @@ body{
   "..... lists active ....." auto /
   1fr minmax(100px, 350px) minmax(250px, 500px) 1fr;
   overflow: hidden;
+  margin: 0;
 }
 
 .navbar{
@@ -31,7 +32,14 @@ body{
   display: flex;
   align-items: center;
   justify-content:space-between;
-  margin: 0 60px;
+  background-color: var(--clr-primary);
+  color: white;
+  padding: 25px;
+}
+
+h1{
+  font-size: 2rem;
+  font-weight: 800;
 }
 
 .btn{
@@ -83,8 +91,7 @@ form{
  
 .tip{
  font-size: 0.7em;
- padding: 36px;
- 
+ padding: 0 36px;
 }
 
 .new{
@@ -210,10 +217,9 @@ form{
 .delete-stuff{
   display: flex;
   justify-content: space-evenly;
-  position: absolute;
-  width: 100%;
+  position:absolute;
   left: 0;
-  bottom: -35px;
+  bottom: 0px;
   color: var(--clr-primary);
 }
 
@@ -241,7 +247,7 @@ form{
   height: 3px;
   margin: 5px auto;
   transition: all 0.3s ease-in-out;
-  background-color: #1338be;
+  background-color: white;
 }
 
 
@@ -302,5 +308,4 @@ form{
 
 .sliding.visible{
   transform: translate3d(0vw, 0, 0);
-
 }
