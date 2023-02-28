@@ -10,6 +10,7 @@ const taskTemplate = document.getElementById('task-template')
 const newTaskForm = document.querySelector('[data-new-task-form]')
 const newTaskInput = document.querySelector('[data-new-task-input]')
 const clearCompleteTasks = document.querySelector('[data-clear-complete-tasks-button]')
+let deleteButtons = document.querySelector('[data-delete-btns]')
 
 const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = "task.selectedListId"
 const LOCAL_STORAGE_LIST_KEY = "task.list"
@@ -90,8 +91,10 @@ function render() {
   const selectedList = lists.find(list => list.id === selectedListId)
   if (selectedListId == null){
     listDisplayContainer.style.display = 'none'
+    deleteButtons.style.display = 'none'
   } else{
     listDisplayContainer.style.display = ''
+    deleteButtons.style.display= ''
     listTitleElement.innerText = selectedList.name
     renderTaskCount(selectedList)
     clearElement(tasksContainer)

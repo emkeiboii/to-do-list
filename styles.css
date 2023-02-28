@@ -21,9 +21,10 @@ body{
   font-size: 1.5rem;
   color: var(--clr-primary);
   grid: "header header header header" auto
-  "..... lists active ....." auto /
+  "..... lists active ....." auto 
+  "..... ..... btndelete ...." auto /
+
   1fr minmax(100px, 350px) minmax(250px, 500px) 1fr;
-  overflow: hidden;
   margin: 0;
 }
 
@@ -35,11 +36,14 @@ body{
   background-color: var(--clr-primary);
   color: white;
   padding: 25px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 10px var(--clr-darker);
 }
 
 h1{
   font-size: 2rem;
   font-weight: 800;
+  margin: 0;
 }
 
 .btn{
@@ -214,13 +218,12 @@ form{
   opacity: 0.5;
 }
 
-.delete-stuff{
+.delete-stuff {
+  grid-area: btndelete;
   display: flex;
   justify-content: space-evenly;
-  position:absolute;
-  left: 0;
-  bottom: 0px;
   color: var(--clr-primary);
+  padding-top: 20px;
 }
 
 .btn.delete:hover{
